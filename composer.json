@@ -1,18 +1,5 @@
 {
     "name": "hanjoyo/hanjoyo-crate-pdo",
-    "repositories": [
-    {
-        "type": "package",
-        "package": {
-            "name": "hanjoyo-crate-pdo",
-            "version": "1.0",
-            "source": {
-                "url": "https://github.com/hanjoyo/hanjoyo-crate-pdo.git",
-                "type": "git",
-                "reference": "master"
-            }
-        }
-    }],
     "keywords": ["database", "pdo", "crate"],
     "require": {
         "php":     "^7.2",
