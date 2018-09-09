@@ -34,4 +34,5 @@
             "CrateTest\\PDO\\": "test",
             "CrateIntegrationTest\\PDO\\": "test"
         }
+    }
 }
