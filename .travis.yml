@@ -1,0 +1,34 @@
+language: php
+dist: trusty
+sudo: required
+
+php:
+  - 7.2
+  - nightly
+
+matrix:
+  allow_failures:
+    - nightly
+
+services:
+  - docker
+
+before_script:
+  - docker run --name crate -d -v $PWD/test/provisioning/crate.yml:/crate/config/crate.yml -v $PWD/test/provisioning/keystore:/vagrant/test/provisioning/keystore -p 127.0.0.1:4200:4200 crate:latest
+  - composer self-update
+  - composer install --prefer-source
+
+script:
+  - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
+  - ./vendor/bin/phpcs --standard=PSR2 ./src/
+
+after_script:
+  - php vendor/bin/coveralls -v
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml
+
+after_failure:
+  - docker logs crate
+
+notifications:
+  email: false

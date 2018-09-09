@@ -1,0 +1,15 @@
+.buildpath
+.DS_Store
+.idea
+.installed.cfg
+.project
+.settings
+.vagrant
+bin/
+build/
+composer.lock
+composer.phar
+env/
+out/
+report
+vendor/
