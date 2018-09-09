@@ -542,7 +542,9 @@ class PDOStatement extends BasePDOStatement implements IteratorAggregate
      */
     public function getColumnMeta($column)
     {
-        throw new Exception\UnsupportedException;
+        // throw new Exception\UnsupportedException;
+
+        return $this->columnBinding[$column];
     }
 
     /**
