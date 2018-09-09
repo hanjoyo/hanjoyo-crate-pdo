@@ -1,4 +1,5 @@
 {
+    "name": "hanjoyo-crate-pdo",
     "repositories": [
     {
         "type": "package",
