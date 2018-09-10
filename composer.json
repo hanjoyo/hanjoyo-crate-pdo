@@ -1,5 +1,7 @@
 {
     "name": "hanjoyo/hanjoyo-crate-pdo",
+    "description": "An internal use purposes's PDO adapter for interacting with the Crate.io DBMS",
+    "license": "Apache-2.0",
     "keywords": ["database", "pdo", "crate"],
     "require": {
         "php":     "^7.2",
